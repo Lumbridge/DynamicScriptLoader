@@ -1,0 +1,3 @@
+PrintDialogue("Hello this is some dialogue")
+MoveToXY(1,2)
+PrintDialogue("This is another line")

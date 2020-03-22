@@ -1,0 +1,8 @@
+﻿  FileManager.cpp
+  FunctionManager.cpp
+  ScriptParser.cpp
+  ScriptableFunction.cpp
+  ScriptableFunctions.cpp
+  main.cpp
+  Generating Code...
+  DynamicScriptLoader.vcxproj -> C:\Users\ryans\source\repos\DynamicScriptLoader\Debug\DynamicScriptLoader.exe
