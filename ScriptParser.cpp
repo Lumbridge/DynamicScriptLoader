@@ -8,6 +8,10 @@
  */
 ScriptableFunction* ScriptParser::Parse(std::string line) const
 {
+	// this is a commented line of script
+	if(line[0] == '#') 
+		return nullptr;
+	
 	// container for the result of the parse operation
 	auto result = new ScriptableFunction();
 	// split up the script line

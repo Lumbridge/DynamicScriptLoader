@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+Debug/DynamicS.A2CEE31F.tlog/link.read.1.tlog
+Debug/DynamicS.A2CEE31F.tlog/CL.write.1.tlog
+Debug/DynamicS.A2CEE31F.tlog/CL.read.1.tlog
+Debug/DynamicS.A2CEE31F.tlog/CL.command.1.tlog
+*.log
+*.idb

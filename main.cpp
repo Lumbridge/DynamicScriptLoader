@@ -13,6 +13,8 @@ int main()
 	// load our script objects from the file
 	functionManager.functionObjects = scriptParser.Parse(fileManager.GetFileLines("test.txt"));
 
+	functionManager.variableMap["StarterPokemon"] = "Mudkip";
+	
 	// run all the dynamic functions
 	for (auto function : functionManager.functionObjects) {
 		functionManager.Invoke(*function);

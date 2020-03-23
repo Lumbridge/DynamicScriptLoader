@@ -28,9 +28,15 @@ void FunctionManager::Invoke(const std::string & functionName, std::vector<std::
 
 /**
  * \brief Dynamically run a function which exists in the functionContainer map by passing it an actual ScriptableFunction object.
- * \param functionName ScriptableFunction to dynamically run.
+ * \param scriptableFunction ScriptableFunction to dynamically run.
  */
-void FunctionManager::Invoke(const ScriptableFunction & functionName)
+void FunctionManager::Invoke(const ScriptableFunction & scriptableFunction)
 {
-	reinterpret_cast<void(*)(std::vector<std::string>)>(functionContainer[functionName.FunctionName])(functionName.Arguments);
+	// check if the object is valid
+	if(&scriptableFunction == nullptr)  // NOLINT(clang-diagnostic-tautological-undefined-compare)
+        return;
+	// check if the function name exists in the map
+	if(functionContainer.find(scriptableFunction.FunctionName) == functionContainer.end())
+        return;
+	reinterpret_cast<void(*)(std::vector<std::string>)>(functionContainer[scriptableFunction.FunctionName])(scriptableFunction.Arguments);
 }

@@ -18,4 +18,10 @@ public:
 	 * \param args 1 string of dialogue that should be displayed.
 	 */
 	static void PrintDialogue(std::vector<std::string> args);
+
+	/**
+	 * \brief 
+	 * \param args 
+	 */
+	static void SetDynamicVariable(std::vector<std::string> args);
 };

@@ -28,16 +28,21 @@ public:
 
 	/**
 	 * \brief Dynamically run a function which exists in the functionContainer map by passing it's name & args.
-	 * \param functionName Name of the dynamic function to run (must exist in the functionContainer)
+	 * \param scriptableFunction Name of the dynamic function to run (must exist in the functionContainer)
 	 * \param args List of arguments to pass into the function.
 	 */
-	void Invoke(const ScriptableFunction& functionName);
+	void Invoke(const ScriptableFunction& scriptableFunction);
 		
 	/**
 	 * \brief Dynamically run a function which exists in the functionContainer map by passing it an actual ScriptableFunction object.
 	 * \param event_function ScriptableFunction to dynamically run.
 	 */
 	std::vector<ScriptableFunction*> functionObjects;
+
+	/**
+	 * \brief Contains dynamic variables available to scripts.
+	 */
+	std::map<std::string, std::string> variableMap;
 private:
 	/**
 	 * \brief Generic template type for adding dynamic methods to a map.
@@ -47,5 +52,5 @@ private:
 	/**
 	 * \brief Map definition of dynamic functions that can be called.
 	 */
-	std::map<std::string, genericTemplate> functionContainer; 
+	std::map<std::string, genericTemplate> functionContainer;	
 };
