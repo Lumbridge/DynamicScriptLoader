@@ -1,6 +1,4 @@
 #include "FunctionManager.h"
-#include "ScriptableFunctions.h"
-#include "ScriptableFunction.h"
 
 /**
  * \brief Helper for managing dynamic functions.
@@ -23,6 +21,10 @@ FunctionManager::~FunctionManager() = default;
  */
 void FunctionManager::Invoke(const std::string & functionName, std::vector<std::string> & args)
 {
+	// check if the function name exists in the map
+	if(functionContainer.find(functionName) == functionContainer.end())
+        return;
+	// invoke the function
 	reinterpret_cast<void(*)(std::vector<std::string>)>(functionContainer[functionName])(args);
 }
 
@@ -38,5 +40,33 @@ void FunctionManager::Invoke(const ScriptableFunction & scriptableFunction)
 	// check if the function name exists in the map
 	if(functionContainer.find(scriptableFunction.FunctionName) == functionContainer.end())
         return;
+	// invoke the function
 	reinterpret_cast<void(*)(std::vector<std::string>)>(functionContainer[scriptableFunction.FunctionName])(scriptableFunction.Arguments);
+}
+
+/**
+ * \brief Runs all functions in the functionObject collection.
+ */
+void FunctionManager::InvokeAll()
+{
+	// run all the dynamic functions
+	for (auto function : functionObjects) {
+		Invoke(*function);
+	}
+}
+
+/**
+ * \brief Parses and runs all functions in a script file.
+ * \param scriptPath The path on disk where the script can be found.
+ */
+void FunctionManager::RunScript(const std::string& scriptPath)
+{
+    const ScriptParser scriptParser;
+    const FileManager fileManager;
+
+    // load our script objects from the file
+    functionObjects = scriptParser.Parse(fileManager.GetFileLines("test.txt"), variableMap);
+
+    // run all the dynamic functions
+    InvokeAll();
 }

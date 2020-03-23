@@ -1,7 +1,9 @@
 #pragma once
-#include <string>
-#include <map>
 #include "ScriptableFunction.h"
+#include "ScriptParser.h"
+#include "FunctionManager.h"
+#include "ScriptableFunctions.h"
+#include "FileManager.h"
 
 /**
  * \brief Helper for managing dynamic functions.
@@ -32,6 +34,17 @@ public:
 	 * \param args List of arguments to pass into the function.
 	 */
 	void Invoke(const ScriptableFunction& scriptableFunction);
+
+	/**
+	 * \brief Runs all functions in the functionObject collection.
+	 */
+	void InvokeAll();
+		
+	/**
+	 * \brief Parses and runs all functions in a script file.
+	 * \param scriptPath The path on disk where the script can be found.
+	 */
+	void RunScript(const std::string& scriptPath);
 		
 	/**
 	 * \brief Dynamically run a function which exists in the functionContainer map by passing it an actual ScriptableFunction object.

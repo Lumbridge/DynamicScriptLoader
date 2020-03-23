@@ -39,3 +39,8 @@ Debug/DynamicS.A2CEE31F.tlog/CL.command.1.tlog
 *.pdb
 *.idb
 *.log
+/Debug/DynamicS.A2CEE31F.tlog
+/.vs/DynamicScriptLoader/v16
+/.vs/ProjectSettings.json
+/.vs
+/DynamicScriptLoader.aps

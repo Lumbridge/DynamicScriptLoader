@@ -1,4 +1,4 @@
 #PrintDialogue("Hello this is some dialogue")
-#MoveToXY(1,2)
+MoveToXY(1,2)
 #PrintDialogue("This is another line")
-SetDynamicVariable("StarterPokemon", "Treko")
+PrintDialogue("The player's name is {{PlayerName}} and they have chosen {{StarterPokemon}}.")

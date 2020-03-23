@@ -6,9 +6,9 @@
  */
 void ScriptableFunctions::MoveToXY(std::vector<std::string> args)
 {
-	auto v1 = static_cast<std::vector<std::string>*>(&args)[0];
-	const auto x = std::stoi(v1[0]);
-	const auto y = std::stoi(v1[1]);
+	auto arguments = static_cast<std::vector<std::string>*>(&args)[0];
+	const auto x = std::stoi(arguments[0]);
+	const auto y = std::stoi(arguments[1]);
 	std::cout << "Moved to grid XY: (" << x << ", " << y << ")" << std::endl;
 }
 
@@ -18,7 +18,7 @@ void ScriptableFunctions::MoveToXY(std::vector<std::string> args)
  */
 void ScriptableFunctions::PrintDialogue(std::vector<std::string> args)
 {
-	auto v1 = static_cast<std::vector<std::string>*>(&args)[0];
-	const auto dialogueText = v1[0];
+	auto arguments = static_cast<std::vector<std::string>*>(&args)[0];
+	const auto dialogueText = arguments[0];
 	std::cout << "Print Dialogue: " << dialogueText << std::endl;
 }
