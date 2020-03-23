@@ -36,3 +36,6 @@ Debug/DynamicS.A2CEE31F.tlog/CL.read.1.tlog
 Debug/DynamicS.A2CEE31F.tlog/CL.command.1.tlog
 *.log
 *.idb
+*.pdb
+*.idb
+*.log
