@@ -88,7 +88,7 @@ std::vector<ScriptableFunction*> ScriptParser::Parse(std::vector<std::string>& l
 			// remove any quotes from the right comparative
 			right = Replace(right, "\"", "");
 
-			// 2. check if the comparatives are equal or not
+			// check if the comparatives are equal or not
 			if (right != left)
 			{
 				// if the comparatives aren't equal then mark the branches script lines as "Do Not Run" or {{+DNR+}}.
