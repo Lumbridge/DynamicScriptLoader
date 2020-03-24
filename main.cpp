@@ -7,12 +7,12 @@ int main()
 
 	// add our variables to our variable map
 	functionManager.variableMap["PlayerName"] = "Ryan";
-	functionManager.variableMap["StarterPokemon"] = "Squirtle";
+	functionManager.variableMap["StarterPokemon"] = "Torchic";
 
 	functionManager.RunScript("test.txt");
 
 	// switch variable value
-	functionManager.variableMap["StarterPokemon"] = "Charmander";
+	functionManager.variableMap["StarterPokemon"] = "Treecko";
 
 	functionManager.RunScript("test.txt");
 	

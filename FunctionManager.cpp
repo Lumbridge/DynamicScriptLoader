@@ -64,8 +64,10 @@ void FunctionManager::RunScript(const std::string& scriptPath)
     const ScriptParser scriptParser;
     const FileManager fileManager;
 
+    auto lines = fileManager.GetFileLines("test.txt");
+	
     // load our script objects from the file
-    functionObjects = scriptParser.Parse(fileManager.GetFileLines("test.txt"), variableMap);
+    functionObjects = scriptParser.Parse(lines, variableMap);
 
     // run all the dynamic functions
     InvokeAll();
